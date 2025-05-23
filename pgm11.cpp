@@ -1,22 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class DemoPublic {
+class Book
+{
 public:
-    int x;
+    string title;
+    string author;
+    float price;
 
-    void setX(int val) {
-        x = val;
-    }
+    Book(string t, string a , float p) : title(t), author(a), price(p) {}
 
-    void showX() {
-        cout << "Value of x: " << x << endl;
+    void display()
+    {
+        cout << "Title:" << title << ", Author: " << author << ", Price: $"
     }
 };
 
-int main() {
-    DemoPublic obj;
-    obj.x = 10;           // Allowed: public member
-    obj.showX();          // Allowed
+int main()
+{
+    Book b("C++ Programming", "Author Name",29.99);
+    b.display();
     return 0;
 }

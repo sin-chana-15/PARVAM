@@ -1,23 +1,30 @@
 #include <iostream>
 using namespace std;
-
-class car{
+class Student
+{
     public:
-     string brand;
-     void start(){
-        cout << brand << "car started!"<<endl;
-     }
+    string name;
+    int age;
+    Student(string n, int a )
+    {
+        name = n;
+        age = a;
+    }
+    Student(const Student &s)
+    {
+        name = s.name;
 
+        age = s.age;
+    }
+    void display()
+    {
+        cout << "Name:" << name << ", Age" << age << endl;
+    }
 };
-  
-int main(){
-    car c1,c2,c3; //Accesing data member
-    c1.brand="Tayota";
-    c2.brand="benz";
-    c3.brand="Tata";
-
-c1.start();
-c2.start();
-c3.start(); 
-return 0;
+int main()
+{
+    Student s1("John",25);
+    Student s2 = s1;
+    s2.display();
+    return 0;
 }

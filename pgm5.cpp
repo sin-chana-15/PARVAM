@@ -1,25 +1,27 @@
- #include<iostream>
- using namespace std;
-
- class Bus {
- public:
-    string busNumber;
-    string route;
-    int capacity;
-
-    void display() {
-        cout << "Bus Number:" <<busNumber << endl;
-        cout << "Router:" << capacity << endl;
-        cout << "capacity;" << capacity << "passengers" << endl;
- }
+#include <iostream>
+using namespace std;
+class Box
+{
+public:
+    int length;
+    Box()
+    {
+        length = 0;
+    }
+    Box(int l)
+    {
+        length = l;
+    }
+    void display()
+    {
+        cout << "length:" << length << endl;
+    }
 };
-
-int main() {
-    Bus b1;
-    b1.busNumber = "KA05 1234";
-    b1.route = "City Centre to Airport";
-    b1.capacity = 40;
-    
+int main()
+{
+    Box b1;
+    Box b2(20);
     b1.display();
+    b2.display();
     return 0;
-}
+}    

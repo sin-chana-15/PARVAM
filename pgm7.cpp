@@ -1,23 +1,47 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-class Student {
+class car
+{
 public:
-    string name;
-    int rollNo;
-    float marks;
+    string brand;
+    int speed; 
 
-    void printInfo() {
-        cout << "Student: " << name << ", Roll No: " << rollNo << ", Marks: " << marks << "%" << endl;
+    car()
+    {
+        brand = "John";
+        speed = 0;
+        cout << "Default constructor Called!," << endl;
+    }
+
+    car(string b, int s)
+    {
+        brand = b;
+        speed =s;
+        cout << "Parameterized Constructed Called!," << endl;
+    }
+
+    car(const car &c)
+    {
+        brand = c.brand;
+        speed = c.speed;
+        cout << "Copy Constructor Called!," << endl;
+    }
+
+    void drive()
+    {
+        cout << "Driving" << brand << " at " << speed << " km/h," << endl;    
     }
 };
 
-int main() {
-    Student s1;
-    s1.name = "Riya";
-    s1.rollNo = 101;
-    s1.marks = 88.5;
+int main()
+{
+    car car1;
+    car1.drive();
 
-    s1.printInfo();
+    car car2("Honda", 100);
+    car2.drive();
+
+    car car3 = car2;
+
     return 0;
 }

@@ -1,24 +1,54 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-class Clock {
+class Student 
+{
 public:
-    int hours, minutes, seconds;
+    int *marks;
+    int size;
 
-    void setTime(int h, int m, int s) {
-        hours = h;
-        minutes = m;
-        seconds = s;
+    Student(int s)
+    {
+        size = 5;
+        marks = new int(size);      
     }
 
-    void showTime() {
-        cout << "Current Time: " << hours << ":" << minutes << ":" << seconds << endl;
+    Student(const Student &s)
+    {
+        size = s.size;
+        marks = new int[size];
+        for (int i = 0; i < size; i++)
+        {
+            marks[i] = s.marks[i];
+        }
+    }
+
+    ~Student()
+    {
+        delete[] marks;
+    }
+     
+    void display()
+    {
+        for (int i = 0; i < size; i++)
+        {
+            cout << marks[i] << " ";
+        }
+        cout << endl;
     }
 };
 
-int main() {
-    Clock c;
-    c.setTime(10, 45, 30);
-    c.showTime();
+int main()
+{
+    Student s1(3);
+    s1.marks[0] = 80;
+    s1.marks[1] = 90;
+    s1.marks[2] = 85;
+
+    Student s2 =s1;
+    s2.display();
+
     return 0;
 }
+    
+
+ 

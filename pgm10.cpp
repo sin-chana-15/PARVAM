@@ -1,24 +1,32 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-
-class Clock {
+class person 
+{
 public:
-    int hours, minutes, seconds;
+    string name;
+    int age;
 
-    void setTime(int h, int m, int s) {
-        hours = h;
-        minutes = m;
-        seconds = s;
+    person()
+    {
+        name="Annoymous";
+        age = 0;
     }
 
-    void showTime() {
-        cout << "Current Time: " << hours << ":" << minutes << ":" << seconds << endl;
+    person(string n,int a)
+    {
+        name = n;
+        age = a;
+    }
+    void display()
+    {
+        cout << "Name:" << name << ",Age:" << endl;
     }
 };
-
-int main() {
-    Clock c;
-    c.setTime(10, 45, 30);
-    c.showTime();
+int main()
+{
+    person p1;
+    person p2("John",25);
+    p1.display();
+    p2.display();
     return 0;
 }

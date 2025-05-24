@@ -1,19 +1,48 @@
 #include <iostream>
 using namespace std;
-class Demo
+
+class Product:
 {
+private:
+    int quality
+    float pricePerItem;
+
 public:
-    Demo()
+    void setProduct(int q, floar)
     {
-        cout << "Consturctor called!" << endl;
+        if (q > 0 && price > 0)
     }
-    ~Demo()
+    else
     {
-        cout << "Destructor called!" << endl;
+        cout <, "Invalid quantity or price!" << endl;
+    }
+
+
+    float getTotalPrice()
+    {
+    return quantity * pricePerItem;
+    }
+
+    int getQuantity()
+    {
+    return quantity;
+    }
+
+    float getUnitPrice()
+    {
+        return pricePerItem;
     }
 };
+
 int main()
 {
-    Demo d1;
+    Product item1;
+
+    item1.setProduct(3,499.99);
+
+    cout << "Items Bought" << item1.getQuantity() << endl;
+    cout << "Price per Item: ₹"  << item1.getUnitPrice() << endl;
+    cout << "Total cost: ₹" << item1.getTotalPrice() << endl;
+
     return 0;
 }

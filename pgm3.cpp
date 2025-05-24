@@ -1,30 +1,30 @@
 #include <iostream>
 using namespace std;
-class Student
-{
-    public:
-    string name;
-    int age;
-    Student(string n, int a )
-    {
-        name = n;
-        age = a;
-    }
-    Student(const Student &s)
-    {
-        name = s.name;
 
-        age = s.age;
-    }
-    void display()
+class Student {
+
+public:
+    int RollNumber;
+
+public:
+    void setRollNumber(int r)
+
     {
-        cout << "Name:" << name << ", Age" << age << endl;
+        RollNumber = r;    
+    }
+    
+    int getRollNumber()
+    {
+        return RollNumber;
     }
 };
+
 int main()
 {
-    Student s1("John",25);
-    Student s2 = s1;
-    s2.display();
+    Student s1;
+
+    s1.setRollNumber(101);
+    cout << s1.getRollNumber() << endl; 
+
     return 0;
 }

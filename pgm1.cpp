@@ -1,15 +1,26 @@
 #include <iostream>
 using namespace std;
-class student
+
+class Person:
 {
+private:
+    string name;
+    int age;
+
 public:
-    student()
+    void setData (string n, int a)
     {
-        cout << "Default constructor called!" <<endl;
+        name = n;
+        age = a;
+    }
+    void displayData()
+    {
+        cout <<"Name:" << name <<", Age: " << age << endl;
     }
 };
 int main()
 {
-    student s1;
+    Person p1;
+    p1.setData()
     return 0;
 }

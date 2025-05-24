@@ -1,23 +1,27 @@
 #include <iostream>
-using namespace std;
-class Sample
+using namesapce std;
+
+class Shape
 {
-    int *data;
 public:
-    Sample()
+    virtual void draw() = 0;
+};
+
+class Cirlce : public Shape
+{
+public:
+    void draw() override
     {
-        data = new int;
-        *data = 10;
-        cout << "Constructor: Memory allocated," << endl;
-    }
-    ~Sample()
-    {
-        delete data;
-        cout << "Destructor: Memory released," << endl;
+        cout << "Drawing Circle" << endl;
     }
 };
+
 int main()
 {
-    Sample s1;
+    Circle c;
+    c.draw();
+
     return 0;
 }
+
+

@@ -1,22 +1,64 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-class Student
+
+class User
 {
+private:
+    int cardNumber;
+    int pin;
+    double balance;
+    
 public:
-    string name;
-    int age,USN;
-    string clg;
-    Student(string n, int a, int u,string m)
+    User(int cardNum, int pinNum, double bal)
     {
-        name = n;
-        age = a;
-        USN = u;
-        clg = m;
-        cout<< "Name:" << name <<", Age: " << age << ",USN:"<<USN << ",clg:" << clg << endl;
+        carsNumber = cardNum;
+        pin = pinNum;
+        balance = bal;
+    }
+        
+    bool authenticate(int entercard, int enterPin)
+    {
+        return (enteredcard == cardNumber && enteredPin)
+    }    
+    
+    bool withdraw(double amount)
+    {
+        if (amount)
+    }        
+        
+        else
+        {
+            cout << "Insufficient balance," << endl;
+        }
+        else
+        {
+            cout << "Invalid cardNumber!" << endl;
+        }
+    }
+
+
+/// Public method for checkig balance
+void checkBalance(int enterPin)
+{
+    if (verify cardNumber(enterNumber))
+    {
+        cout << "Your cardNumber is:" << cardNumber<< endl;
+    }
+    else
+    {
+        cout << "Invalid " << endl;
     }
 };
+
 int main()
 {
-    Student s1("Sinchana",18,124063,"City engineering college");
+    ATM myAtm
+
+    myATM.withdrawCash(1234,1000); /// correct  PIN
+    myATM.checkBalance(1234);  // correct PIN
+
+    myAtm.withdrawCash(1111,500); // wrong PIN
     return 0;
 }
+

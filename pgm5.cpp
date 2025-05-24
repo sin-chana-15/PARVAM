@@ -1,27 +1,32 @@
 #include <iostream>
 using namespace std;
-class Box
+
+class Product
 {
+private:
+    int quantity;
+    float pricePerItem;
+
 public:
-    int length;
-    Box()
+
+    void setProduct(int q, float price)
     {
-        length = 0;
+        if (q > 0 && price > 0)
+        {
+            quantity = q;
+            pricePerItem = price;
+        }
+        else
+        {
+            cout << "Invalid quantity or price!" << endl;
+        }
+        
     }
-    Box(int l)
+
+    float getTotalPrice()
     {
-        length = l;
+        float effectivePrice = pricePerItem;
     }
-    void display()
-    {
-        cout << "length:" << length << endl;
-    }
-};
-int main()
-{
-    Box b1;
-    Box b2(20);
-    b1.display();
-    b2.display();
-    return 0;
-}    
+
+    if (pricePerItem > 2000)
+}

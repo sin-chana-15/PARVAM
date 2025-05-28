@@ -1,64 +1,31 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-class User
+void displayInventory(int *inventory, int size)
 {
-private:
-    int cardNumber;
-    int pin;
-    double balance;
-    
-public:
-    User(int cardNum, int pinNum, double bal)
+    cout << "Warehouse Inventory items: ";
+    for (int i = 0; i < size; i++)
     {
-        carsNumber = cardNum;
-        pin = pinNum;
-        balance = bal;
+        cout << * (inventory + i) << " ";
     }
-        
-    bool authenticate(int entercard, int enterPin)
-    {
-        return (enteredcard == cardNumber && enteredPin)
-    }    
-    
-    bool withdraw(double amount)
-    {
-        if (amount)
-    }        
-        
-        else
-        {
-            cout << "Insufficient balance," << endl;
-        }
-        else
-        {
-            cout << "Invalid cardNumber!" << endl;
-        }
-    }
-
-
-/// Public method for checkig balance
-void checkBalance(int enterPin)
-{
-    if (verify cardNumber(enterNumber))
-    {
-        cout << "Your cardNumber is:" << cardNumber<< endl;
-    }
-    else
-    {
-        cout << "Invalid " << endl;
-    }
-};
+    cout << endl;
+}
 
 int main()
 {
-    ATM myAtm
+    int inventory[5]= {50, 30, 20, 40, 10};
+    int *ptr = inventory;
 
-    myATM.withdrawCash(1234,1000); /// correct  PIN
-    myATM.checkBalance(1234);  // correct PIN
+    displayInventory(ptr, 5);
 
-    myAtm.withdrawCash(1111,500); // wrong PIN
+    *(ptr + 2) = 25;
+
+    cout << "Updated Inventory: ";
+    for (int i =0; i < 5; i++)
+    {
+        cout << inventory[i] << " ";
+    }
+    cout << endl;
+
     return 0;
 }
-

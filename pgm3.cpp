@@ -1,30 +1,35 @@
 #include <iostream>
 using namespace std;
 
-class Student {
-
-public:
-    int RollNumber;
-
-public:
-    void setRollNumber(int r)
-
+void displayBedOccupancy(int *patientIDs, int *bedIDs,  int size) 
+{
+    cout << "Hospital Bed Occupancy:\n ";
+    for (int i = 0; i < size; i++)
     {
-        RollNumber = r;    
+        cout << "Bed ID: " << *(bedIDs + i) << " | patient ID: " << *(patientIDs + i) << endl;
     }
-    
-    int getRollNumber()
-    {
-        return RollNumber;
-    }
-};
+    cout << endl;
+}
 
 int main()
 {
-    Student s1;
+    const int SIZE = 5;
+    int bedIDs[SIZE] = {201, 202, 203, 204, 205};
+    int patientIDs[SIZE] = {101, 102, 103, 104, 105};
 
-    s1.setRollNumber(101);
-    cout << s1.getRollNumber() << endl; 
+    int *ptrPatient = patientIDs;
+    int *ptrBed = bedIDs;
+
+    displayBedOccupancy(ptrPatient, ptrBed, SIZE);
+
+    *(ptrPatient + 2) = 108;
+
+    cout << "After Updating Patient in Bed 203:\n";
+    displayBedOccupancy(ptrPatient, ptrBed, SIZE);
 
     return 0;
 }
+
+    
+    
+

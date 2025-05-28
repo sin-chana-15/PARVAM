@@ -1,48 +1,23 @@
 #include <iostream>
-using namespace std;
+using namepsace std;
 
-class Product:
+class Car
 {
-private:
-    int quality
-    float pricePerItem;
-
 public:
-    void setProduct(int q, floar)
+    string model;
+    Car(string model)
     {
-        if (q > 0 && price > 0)
+        this->model = model;
     }
-    else
+    void show()
     {
-        cout <, "Invalid quantity or price!" << endl;
-    }
-
-
-    float getTotalPrice()
-    {
-    return quantity * pricePerItem;
-    }
-
-    int getQuantity()
-    {
-    return quantity;
-    }
-
-    float getUnitPrice()
-    {
-        return pricePerItem;
+        cout << "Car model: " << this->model << endl;
     }
 };
 
 int main()
 {
-    Product item1;
-
-    item1.setProduct(3,499.99);
-
-    cout << "Items Bought" << item1.getQuantity() << endl;
-    cout << "Price per Item: ₹"  << item1.getUnitPrice() << endl;
-    cout << "Total cost: ₹" << item1.getTotalPrice() << endl;
-
+    Car c("Toyota");
+    c.show();
     return 0;
 }

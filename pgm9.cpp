@@ -1,54 +1,73 @@
 #include <iostream>
+#include <string>
 using namespace std;
-class Student 
+
+class FIR
 {
 public:
-    int *marks;
-    int size;
+    string complainantName;
 
-    Student(int s)
-    {
-        size = 5;
-        marks = new int(size);      
-    }
+    FIR(string name) : complainantName(name) {}
 
-    Student(const Student &s)
-    {
-        size = s.size;
-        marks = new int[size];
-        for (int i = 0; i < size; i++)
-        {
-            marks[i] = s.marks[i];
-        }
-    }
+    virtual void registerCase() override
 
-    ~Student()
+    virtual ~FIR() {}
+
+};
+
+class TheftCase : public FIR
+{
+public:
+    Theftcase(string name) : FIR(name) {}
+
+    void registerCase() override 
     {
-        delete[] marks;
+        cout << "Accident FIR registered fpr " << complainantName << "." << endl;
+        cout << "Action: Investigation started for stolen property," << endl;
     }
-     
-    void display()
+};
+
+class AccidentCase : public FIR
+{
+    AccidentCase(string name) : FIR(name) {}
+
+    void registerCard() override
     {
-        for (int i = 0; i < size; i++)
-        {
-            cout << marks[i] << " ";
-        }
-        cout << endl;
+    cout << "Accident FIR registered for " << complainantName << "." << endl;
+    cout << "Action: Ambulance dispacthed and accident site team notified. " << endl;
+    }
+};
+
+class MissingPersonCase : public FIR
+{
+public:
+    MissingPersonCase(string name) : FIR(name) {}
+
+    void registerCase(string name)  override
+    {
+        cout << "Missing Person FIR registered for " << complainantName << "." << endl;
+        cout << "Action: Local patrol units and investigation initiated." << endl;
     }
 };
 
 int main()
 {
-    Student s1(3);
-    s1.marks[0] = 80;
-    s1.marks[1] = 90;
-    s1.marks[2] = 85;
 
-    Student s2 =s1;
-    s2.display();
+    FIR *case1 = new Theftcase("Ravi");
+    FIR *case2 = new AccidentCase("Sita");
+    FIR *case3 = new MissingPersonCase("Karan");
+
+    cout << "=== FIR Registration ===" << endl;
+    case1->registerCase();
+    cout << endl;
+    case2->registerCase();
+    cout << endl;
+    case3->registerCase();
+
+    delete case1;
+    delete case2;
+    delete case3;
 
     return 0;
 }
     
-
- 

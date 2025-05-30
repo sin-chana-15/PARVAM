@@ -1,69 +1,32 @@
 #include <iostream>
-#include <string>
 using namespace std;
-
-class Booking
+class person 
 {
 public:
-    string customerName;
-    int seats;
+    string name;
+    int age;
 
-    Booking(string name ="", int s =1) : customerName(name),seats(s) {}
-
-    virtual void bookTicket() = 0;
-
-    virtual ~Booking() {}
-
-};
-
-class FlightBooking : public Booking
-{
-public:
-    FlightBooking(string namee, int s) : Booking(name, s) {}
-
-    void bookTicket() override
+    person()
     {
-        cout << "Flight ticket booked for " << customerName
-             <<" with " << seats << "seat(s)." <<enfl;
+        name="Annoymous";
+        age = 0;
     }
-};
 
-class TrainBooking
-{
-public:
-    TrainBooking(string name, int s) : Booking(name, s) {}
-    
-    void bookTicket() override
-    {s
-        cout << "Train ticket booked for " << customerName
-             <<" with " << seats << " seat(s)," << endl;
-    }
-};
-
-class BusBooking : public Booking 
-{
-public:
-    BusBooking(string name, int s) : Booking(name,s) {}
-
-    void bookTicket() override
+    person(string n,int a)
     {
-        cout << "Bus ticket booked for " << customerName
-             << " with " << seats << " seat(s)," << endl;
+        name = n;
+        age = a;
+    }
+    void display()
+    {
+        cout << "Name:" << name << ",Age:" << endl;
     }
 };
-
-Class BookManager
+int main()
 {
-public:
-    void confirmBooking(string name, int seats)
-    {
-        cout << "Booking confirmed for: " << name << endl;
-    }
-
-    void confirmBooking(string name, int seats)
-    {
-        cout << "Booking confirmed for: " << " with " << seats << " seat(s)." << endl;
-    }
-};
-
-
+    person p1;
+    person p2("John",25);
+    p1.display();
+    p2.display();
+    return 0;
+}

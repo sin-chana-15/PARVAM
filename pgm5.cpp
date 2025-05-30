@@ -1,31 +1,27 @@
 #include <iostream>
-using namepsace std;
-
-class Product
+using namespace std;
+class Box
 {
 public:
-    string name;
-    double price;
-
-public:
-    Product(String name, double price)
+    int length;
+    Box()
     {
-        this->name = name;
-        this->price = price;
+        length = 0;
+    }
+    Box(int l)
+    {
+        length = l;
     }
     void display()
     {
-        cout << "Product: " << this->name << ", Price: $" << this->price << endl;
+        cout << "length:" << length << endl;
     }
-}
-
+};
 int main()
 {
-    Product p1("Laptop", 999.99);
-    Product p2("Smartphone", 499.49);
-
-    p1.display();
-    p2.display();
-
+    Box b1;
+    Box b2(20);
+    b1.display();
+    b2.display();
     return 0;
-}
+}    
